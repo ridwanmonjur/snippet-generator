@@ -1,10 +1,14 @@
 import { html } from "common-tags";
 
-const parseVSCode = (
+const parseVSCode = ({
+  description,
+  trigger,
+  snippet,
+}: {
   description: string,
-  tabtrigger: string,
+  trigger: string,
   snippet: string,
-) => {
+}) => {
   // escape " with \"
   // split lines by line-break
   const separatedSnippet = snippet
@@ -20,7 +24,7 @@ const parseVSCode = (
   // prettier-ignore
   return html`
     "${description}": {
-      "prefix": "${tabtrigger}",
+      "prefix": "${trigger}",
       "body": [
         ${newSnippet.join('\n')}
       ],
@@ -30,3 +34,4 @@ const parseVSCode = (
 };
 
 export default parseVSCode;
+

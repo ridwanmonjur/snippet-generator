@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest";
 
 describe("parseVSCode", () => {
   const description = "a";
-  const tabTrigger = "b";
+  const trigger = "b";
   const snippet = "c";
 
   test("parses simple snippet", () => {
@@ -14,6 +14,6 @@ describe("parseVSCode", () => {
   ],
   "description": "a"
 }`;
-    expect(parseVSCode(description, tabTrigger, snippet)).toBe(result);
+    expect(parseVSCode(description, trigger, snippet)).toBe(result);
   });
 });

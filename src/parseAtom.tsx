@@ -1,14 +1,18 @@
 import { html } from "common-tags";
 
-const parseAtom = (
+const parseAtom = ({
+  description,
+  trigger,
+  snippet,
+}: {
   description: string,
-  tabtrigger: string,
+  trigger: string,
   snippet: string,
-) => {
+}) => {
   // prettier-ignore
   return html`
     '${description}':
-      'prefix': '${tabtrigger}'
+      'prefix': '${trigger}'
       'body': """
         ${snippet}
       """

@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest";
 
 describe("parseAtom", () => {
   const description = "a";
-  const tabTrigger = "b";
+  const trigger = "b";
   const snippet = "c";
 
   test("parseAtom", () => {
@@ -12,6 +12,6 @@ describe("parseAtom", () => {
   'body': """
     c
   """`;
-    expect(parseAtom(description, tabTrigger, snippet)).toBe(result);
+    expect(parseAtom(description, trigger, snippet)).toBe(result);
   });
 });

@@ -1,10 +1,14 @@
 import { html } from "common-tags";
 
-const renderSublimeText = (
+const renderSublimeText = ({
+  description,
+  trigger,
+  snippet,
+}: {
   description: string,
-  tabtrigger: string,
+  trigger: string,
   snippet: string,
-) => {
+}) => {
   const regexpMagic = /(\$)([a-z(]+)([^$])/gi;
   const escapedSnippet = snippet.replace(regexpMagic, "\\$1$2$3");
   // prettier-ignore
@@ -13,7 +17,7 @@ const renderSublimeText = (
       <content><![CDATA[
     ${escapedSnippet}
     ]]></content>
-      <tabTrigger>${tabtrigger}</tabTrigger>
+      <trigger>${trigger}</trigger>
       <description>${description}</description>
       <!-- Optional: Set a scope to limit where the snippet will trigger -->
       <!-- <scope >source.python</scope > -->
